@@ -74,7 +74,7 @@ def chunk_text(pdf_path, headers):
 
         i,j = text.index(headers[indx][:21]), text.index(headers[indx+1][:21])
         chunk = text[i : j]
-        create_and_write_file('output', f'{pdf_path[11:-4]}.txt', f"\nChunk {indx + 1}:\n{chunk}\n")
+        create_and_write_file('output', f'{pdf_path[10:-4]}.txt', f"\nChunk {indx + 1}:\n{chunk}\n")
         indx += 1
         chunk_list.append(chunk)
 
@@ -82,7 +82,7 @@ def chunk_text(pdf_path, headers):
     if indx < len(headers):
         i = text.index(headers[-1][:15])
         chunk = text[i : ]
-        create_and_write_file('output', f'{pdf_path[11:-4]}.txt', f"\nChunk {indx + 1}:\n{chunk}\n")
+        create_and_write_file('output', f'{pdf_path[10:-4]}.txt', f"\nChunk {indx + 1}:\n{chunk}\n")
         chunk_list.append(chunk)
 
     return chunk_list
